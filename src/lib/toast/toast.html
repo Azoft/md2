@@ -2,5 +2,7 @@
      class="md2-toast"
      [class.in]="toast.isVisible"
      (click)="removeToast(toast.id)"
-     [innerHTML]="toast.message">
+     [innerHTML]="toast.message"
+     [style.backgroundColor]="toast.backgroundColor"
+     [style.color]="toast.fontColor">
 </div>

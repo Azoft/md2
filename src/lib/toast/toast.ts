@@ -14,7 +14,11 @@ import {
 export class Toast {
   id: number;
   isVisible: boolean;
-  constructor(public message: string) { }
+  constructor(
+    public message: string,
+    public backgroundColor: string,
+    public fontColor: string,
+  ) { }
 }
 
 export class Md2ToastConfig {
@@ -43,13 +47,13 @@ export class Md2Toast {
    * show toast
    * @param toastObj string or object with message and other properties of toast
    */
-  show(message: string, duration?: number) {
+  show(message: string, duration?: number, backgroundColor: string = '#000000', fontColor: string = '#ffffff') {
     if (!message || !message.trim()) { return; }
 
     if (duration) { this._config.duration = duration; }
 
     let toast: Toast;
-    toast = new Toast(message);
+    toast = new Toast(message, backgroundColor, fontColor);
 
     if (toast) {
       if (!this._toastInstance) {
@@ -132,7 +136,7 @@ export class Md2Toast {
 })
 export class Md2ToastComponent {
   toasts: Toast[] = [];
-  maxShown = 5;
+  maxShown = 20;
 
   /**
    * add toast
