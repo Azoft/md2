@@ -1,6 +1,6 @@
 {
   "name": "@azoft/md2",
-  "version": "0.0.29",
+  "version": "0.0.30",
   "description": "Angular2 based Material Design components, directives and services are Accordion, Autocomplete, Chips(Tags), Collapse, Colorpicker, Data Table, Datepicker, Dialog(Modal), Menu, Multiselect, Select, Tabs, Tags(Chips), Toast and Tooltip.",
   "author": "Azoft <web.azoft@azoft.com>",
   "homepage": "https://github.com/azoft/md2",
