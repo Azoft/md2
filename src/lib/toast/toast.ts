@@ -39,8 +39,8 @@ export class Md2Toast {
    * toast message
    * @param toast string or object with message and other properties of toast
    */
-  toast(message: string, duration?: number) {
-    this.show(message, duration);
+  toast(message: string, duration?: number, backgroundColor?: string, fontColor?: string) {
+    this.show(message, duration, backgroundColor, fontColor);
   }
 
   /**
