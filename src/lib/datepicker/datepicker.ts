@@ -146,7 +146,8 @@ export class Md2Datepicker implements OnDestroy, ControlValueAccessor {
   @Input() placeholder: string;
   @Input() timeInterval: number = 1;
   @Input() id: string;
-  @Input() nowDate: Date;
+  @Input() showNowButton: boolean = true;
+  @Input() showSetButton: boolean = true;
 
   @Input()
   get type() { return this._type; }

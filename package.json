@@ -2,12 +2,12 @@
   "name": "@azoft/md2",
   "version": "0.0.29",
   "description": "Angular2 based Material Design components, directives and services are Accordion, Autocomplete, Chips(Tags), Collapse, Colorpicker, Data Table, Datepicker, Dialog(Modal), Menu, Multiselect, Select, Tabs, Tags(Chips), Toast and Tooltip.",
-  "author": "Dharmesh Pipariya <pipariyadharmesh@gmail.com>",
-  "homepage": "https://github.com/Promact/md2",
-  "bugs": "https://github.com/Promact/md2/issues",
+  "author": "Azoft <web.azoft@azoft.com>",
+  "homepage": "https://github.com/azoft/md2",
+  "bugs": "https://github.com/azoft/md2/issues",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Promact/md2.git"
+    "url": "https://github.com/azoft/md2.git"
   },
   "scripts": {
     "build": "gulp build:components",

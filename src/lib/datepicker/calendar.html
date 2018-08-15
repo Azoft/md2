@@ -20,7 +20,7 @@
   </div>
 
   <div class="md2-calendar-header-buttons">
-    <button *ngIf="nowDate" class="md2-calendar-header-button" (click)="_setNowDate()">Now</button>
+    <button *ngIf="showNowButton" class="md2-calendar-header-button" (click)="_setNowDate()">Now</button>
     <button *ngIf="showSetButton" class="md2-calendar-header-button" (click)="_setDate()">Set</button>
   </div>
 
