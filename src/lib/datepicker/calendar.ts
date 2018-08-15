@@ -70,6 +70,10 @@ export class Md2Calendar implements AfterContentInit {
   /** A function used to filter which dates are selectable. */
   @Input() dateFilter: (date: Date) => boolean;
 
+  @Input() nowDate: Date;
+
+  @Input() showSetButton: boolean = true;
+
   /** Emits when the currently selected date changes. */
   @Output() selectedChange = new EventEmitter<Date>();
 
@@ -397,6 +401,19 @@ export class Md2Calendar implements AfterContentInit {
 
   _calendarStateDone() {
     this._calendarState = '';
+  }
+
+  _setDate(): void {
+    // console.log(this)
+    // this._timeSelected(this._activeDate);
+    // this._activeDate = date;
+    this._clockView = 'minute';
+    this.selectedChange.emit(this._activeDate);
+  }
+
+  _setNowDate(): void {
+    this._activeDate = this.nowDate;
+    this.selectedChange.emit(this._activeDate);
   }
 
 }

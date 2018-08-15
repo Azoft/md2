@@ -36,7 +36,8 @@
                       [touchUi]="touch"
                       [startView]="startView"
                       [format]="dateFormat"
-                      #dateControl="ngModel" 
+                      #dateControl="ngModel"
+                      [nowDate]="today"
                       [id]="customID"></md2-datepicker>
       <br />
       <span class="error-helper" *ngIf="dateControl.touched && dateControl.errors?.required">Date is Required!</span>
