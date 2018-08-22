@@ -18,6 +18,8 @@ export class Toast {
     public message: string,
     public backgroundColor: string,
     public fontColor: string,
+    public localId: string,
+    public onClose: any,
   ) { }
 }
 
@@ -39,21 +41,23 @@ export class Md2Toast {
    * toast message
    * @param toast string or object with message and other properties of toast
    */
-  toast(message: string, duration?: number, backgroundColor?: string, fontColor?: string) {
-    this.show(message, duration, backgroundColor, fontColor);
+  toast(message: string, duration?: number, backgroundColor?: string, fontColor?: string,
+    localId?: string, onClose?: any) {
+    this.show(message, duration, backgroundColor, fontColor, localId, onClose);
   }
 
   /**
    * show toast
    * @param toastObj string or object with message and other properties of toast
    */
-  show(message: string, duration?: number, backgroundColor: string = '#000000', fontColor: string = '#ffffff') {
+  show(message: string, duration?: number, backgroundColor: string = '#000000', fontColor: string = '#ffffff',
+    localId?: string, onClose?: any) {
     if (!message || !message.trim()) { return; }
 
     if (duration) { this._config.duration = duration; }
 
     let toast: Toast;
-    toast = new Toast(message, backgroundColor, fontColor);
+    toast = new Toast(message, backgroundColor, fontColor, localId, onClose);
 
     if (toast) {
       if (!this._toastInstance) {
@@ -159,7 +163,13 @@ export class Md2ToastComponent {
    * remove toast
    * @param toastId number of toast id
    */
-  removeToast(toastId: number) {
+  removeToast(toastId: number, fromView = false) {
+
+    const removedToast = this.toasts.find((toast) => toast.id === toastId);
+    if (fromView && removedToast && removedToast.onClose) {
+      removedToast.onClose(removedToast);
+    }
+
     this.toasts.forEach((t: any) => { if (t.id === toastId) { t.isVisible = false; } });
     setTimeout(() => {
       this.toasts = this.toasts.filter((toast) => { return toast.id !== toastId; });

@@ -1,7 +1,7 @@
 <div *ngFor="let toast of toasts"
      class="md2-toast"
      [class.in]="toast.isVisible"
-     (click)="removeToast(toast.id)"
+     (click)="removeToast(toast.id, true)"
      [innerHTML]="toast.message"
      [style.backgroundColor]="toast.backgroundColor"
      [style.color]="toast.fontColor">
